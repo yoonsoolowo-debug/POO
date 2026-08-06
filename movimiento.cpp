@@ -4,7 +4,7 @@ Programa de cinemática
 Alan Nathaniel Acosta Valderrama
 Código: 20232135005
 anacostav@udistrital.edu.co
-
+Este programa simula un MRUA, le permite al usuario ingresar datos de posición inicial, velocida inicial, aceleración constante y tiempo transcurrido. Le entrega al usuario la posición final, desplazamiento, velocidad final y un cojunto de archivos datos .data para la graficación de r(t), v(t) y trayectoria.
 */
 #include<iostream>
 #include<cmath>
@@ -16,21 +16,17 @@ struct vector{double x,y,z;};
 
 vector suma(vector a, vector b){
     vector r;
-
     r.x = a.x + b.x;
     r.y = a.y + b.y;
     r.z = a.z + b.z;
-
     return r;
 }
 
 vector producto(vector a, double k){
     vector r;
-
     r.x = a.x * k;
     r.y = a.y * k;
     r.z = a.z * k;
-
     return r;
 }
 
@@ -70,7 +66,7 @@ int main(){
 
     double t;
 	cout<<"Bienvenid@."<<endl;
-	cout<<"En este programa se simula un movimiento rectilíneo uniforme en el plano cartesiano de una partícula. Usted tiene la libertad de poner las componentes (x, y e z) de la posición inicial, velocidad inicial y la aceleración que se admite constante, por consiguiente usted proporcionará al programa el tiempo transcurrido para calcular la posición final, velocidad final, desplazamiento y un conjunto de datos .dat para la graficación de la posición, velocidad y trayectoria de la partícula en el tiempo dado."<<endl;
+	cout<<"En este programa se simula un movimiento rectilíneo uniformemente acelerado en el plano cartesiano de una partícula. Usted tiene la libertad de poner las componentes (x, y e z) de la posición inicial, velocidad inicial y la aceleración que se admite constante, por consiguiente usted proporcionará al programa el tiempo transcurrido para calcular la posición final, velocidad final, desplazamiento total y un conjunto de datos .dat para la graficación de la posición, velocidad y trayectoria de la partícula en el tiempo dado."<<endl;
     cout<<endl;
     
     cout<<"Ingrese las componentes de la posición inicial:"<<endl;
@@ -133,7 +129,7 @@ int main(){
     imprimir(vf);
     cout<<endl;
 
-    cout<<"Desplazamiento:"<<endl;
+    cout<<"Desplazamiento total de la partícula:"<<endl;
     imprimir(d);
 	cout<<endl;
 

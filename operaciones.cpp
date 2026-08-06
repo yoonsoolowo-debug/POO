@@ -4,7 +4,7 @@ Programa de operaciones
 Alan Nathaniel Acosta Valderrama
 Código: 20232135005
 anacostav@udistrital.edu.co
-Este programa le permite al usuario realizar operaciones entre dos números haciendo una comparación de magnitud entre los número ingresados y el resultado por operación: suma, resta, potencia y raíz.
+Este programa le permite al usuario realizar operaciones entre dos números haciendo una comparación de magnitud entre los números ingresados y el resultado por operación: suma, resta, potencia y raíz.
 */
 #include<iostream>
 #include<cmath>
@@ -61,6 +61,10 @@ void comparar(float x, float y, float z){
 
 int main() {
 	float a, b, c;
+	cout<<"Bienvenid@."<<endl;
+	cout<<"Este programa le permite realizar las siguiente operaciones entre dos números: suma, resta, potencia, división y raíz. En adición, realizará una comparación de magnitud luego de cada operación entre los números ingresados y el resultado obtenido."<<endl;
+	cout<<endl;
+	
 	cout<<"Ingresa el valor de a:"<<endl;
 	cin>>a;
 	cout<<"Ingresa el valor de b:"<<endl;
