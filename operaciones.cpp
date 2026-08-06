@@ -1,3 +1,11 @@
+/*
+Programa de operaciones
+05.08.2026
+Alan Nathaniel Acosta Valderrama
+Código: 20232135005
+anacostav@udistrital.edu.co
+Este programa le permite al usuario realizar operaciones entre dos números haciendo una comparación de magnitud entre los número ingresados y el resultado por operación: suma, resta, potencia y raíz.
+*/
 #include<iostream>
 #include<cmath>
 
