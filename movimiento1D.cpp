@@ -4,7 +4,7 @@ Código de movimiento MRUA en una dimensión con graficador
 Alan Nathaniel Acosta Valderrama
 Código: 20232135005
 anacostav@udistrital.edu.co
-
+El código calcula y representa el movimiento de una partícula en una dimensión con aceleración constante. Utiliza funciones para determinar la posición, la velocidad, la aceleración y el desplazamiento en función del tiempo. A partir de los valores iniciales y el tiempo final, genera archivos con los datos del movimiento y utiliza Gnuplot para elaborar las gráficas de posición, velocidad y aceleración respecto al tiempo. Además, muestra en pantalla la posición y velocidad finales y el desplazamiento realizado.
 */
 #include<iostream>
 #include<fstream>
