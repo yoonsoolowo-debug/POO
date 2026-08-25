@@ -1,7 +1,15 @@
-#include <iostream>
-#include <fstream>
-#include <cstdio>
-#include <cstdlib>
+/*
+Código de movimiento MRUA en una dimensión con graficador
+06.08.2026
+Alan Nathaniel Acosta Valderrama
+Código: 20232135005
+anacostav@udistrital.edu.co
+
+*/
+#include<iostream>
+#include<fstream>
+#include<cstdio>
+#include<cstdlib>
 using namespace std;
 
 double posicion(double x0,double v0x,double ax,double t){
