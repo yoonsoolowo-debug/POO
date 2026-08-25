@@ -2,7 +2,6 @@
 #include <fstream>
 #include <cstdio>
 #include <cstdlib>
-
 using namespace std;
 
 double posicion(double x0,double v0x,double ax,double t){
@@ -53,39 +52,57 @@ int main(){
 
     double xf=posicion(x0,v0x,ax,tf);
     double deltaX=desplazamiento(xf,x0);
+    double vxf=velocidad(v0x,ax,tf);
 
     cout<<"Posicion inicial: "<<x0<<" m"<<endl;
     cout<<"Velocidad inicial: "<<v0x<<" m/s"<<endl;
     cout<<"Aceleracion: "<<ax<<" m/s^2"<<endl;
     cout<<"Tiempo final: "<<tf<<" s"<<endl;
     cout<<"Posicion final: "<<xf<<" m"<<endl;
+    cout<<"Velocidad final: "<<vxf<<" m/s"<<endl;
     cout<<"Desplazamiento: "<<deltaX<<" m"<<endl;
 
-    FILE *gnuplot=popen("gnuplot -persist","w");
+    FILE *gnuplot1=popen("gnuplot -persist","w");
 
-    if(gnuplot==NULL){
+    if(gnuplot1==NULL){
         cerr<<"No se pudo ejecutar Gnuplot"<<endl;
         return 1;
     }
 
-    fprintf(gnuplot,"set grid\n");
+    fprintf(gnuplot1,"set grid\n");
 
-    fprintf(gnuplot,"set title \"Posicion vs Tiempo\"\n");
-    fprintf(gnuplot,"set xlabel \"Tiempo (s)\"\n");
-    fprintf(gnuplot,"set ylabel \"Posicion x (m)\"\n");
-    fprintf(gnuplot,"plot \"posicion.txt\" using 1:2 with linespoints pt 6 ps 1 lc rgb 'blue' title 'x(t)'\n");
+    fprintf(gnuplot1,"set title \"Posicion vs Tiempo\"\n");
+    fprintf(gnuplot1,"set xlabel \"Tiempo (s)\"\n");
+    fprintf(gnuplot1,"set ylabel \"Posicion x (m)\"\n");
+    fprintf(gnuplot1,"plot \"posicion.txt\" using 1:2 with linespoints pt 6 ps 1 lc rgb 'blue' title 'x(t)'\n");
 
-    fprintf(gnuplot,"set title \"Velocidad vs Tiempo\"\n");
-    fprintf(gnuplot,"set xlabel \"Tiempo (s)\"\n");
-    fprintf(gnuplot,"set ylabel \"Velocidad vx (m/s)\"\n");
-    fprintf(gnuplot,"plot \"velocidad.txt\" using 1:2 with linespoints pt 6 ps 1 lc rgb 'red' title 'vx(t)'\n");
+	FILE *gnuplot2=popen("gnuplot -persist","w");
+	
+	if(gnuplot2==NULL){
+		cerr<<"No se pudo ejecutar Gnuplot"<<endl;
+		return 1;
+	}
 
-    fprintf(gnuplot,"set title \"Aceleracion vs Tiempo\"\n");
-    fprintf(gnuplot,"set xlabel \"Tiempo (s)\"\n");
-    fprintf(gnuplot,"set ylabel \"Aceleracion ax (m/s^2)\"\n");
-    fprintf(gnuplot,"plot \"aceleracion.txt\" using 1:2 with linespoints pt 6 ps 1 lc rgb 'green' title 'ax(t)'\n");
+    fprintf(gnuplot2,"set title \"Velocidad vs Tiempo\"\n");
+    fprintf(gnuplot2,"set xlabel \"Tiempo (s)\"\n");
+    fprintf(gnuplot2,"set ylabel \"Velocidad vx (m/s)\"\n");
+    fprintf(gnuplot2,"plot \"velocidad.txt\" using 1:2 with linespoints pt 6 ps 1 lc rgb 'red' title 'vx(t)'\n");
 
-    pclose(gnuplot);
+	FILE *gnuplot3=popen("gnuplot -persist","w");
+	
+	if(gnuplot3==NULL){
+		cerr<<"No se pudo ejecutar Gnuplot"<<endl;
+		return 1;
+	}
+
+    fprintf(gnuplot3,"set title \"Aceleracion vs Tiempo\"\n");
+    fprintf(gnuplot3,"set xlabel \"Tiempo (s)\"\n");
+    fprintf(gnuplot3,"set ylabel \"Aceleracion ax (m/s^2)\"\n");
+    fprintf(gnuplot3,"plot \"aceleracion.txt\" using 1:2 with linespoints pt 6 ps 1 lc rgb 'green' title 'ax(t)'\n");
+
+    pclose(gnuplot1);
+    pclose(gnuplot2);
+    pclose(gnuplot3);
 
     return 0;
 }
