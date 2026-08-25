@@ -1,6 +1,6 @@
 /*
 Código de movimiento MRUA en una dimensión con graficador
-06.08.2026
+25.08.2026
 Alan Nathaniel Acosta Valderrama
 Código: 20232135005
 anacostav@udistrital.edu.co
