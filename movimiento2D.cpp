@@ -1,6 +1,6 @@
 /*
 Programa de cinemática
-06.08.2026
+26.08.2026
 Alan Nathaniel Acosta Valderrama
 Código: 20232135005
 anacostav@udistrital.edu.co
