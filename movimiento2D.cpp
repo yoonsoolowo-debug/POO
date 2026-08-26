@@ -84,7 +84,7 @@ double cosenoY(vector v){
 }
 
 // Función que calcula el ángulo respecto al eje x.
-//Además de hacer la conversación a grados, porque la operación acos(w) entrega el resultado en radianes.
+// Además de hacer la conversación a grados, porque la operación acos(w) entrega el resultado en radianes.
 double anguloX(vector v){
     return acos(cosenoX(v))*180.0/M_PI;
 }
