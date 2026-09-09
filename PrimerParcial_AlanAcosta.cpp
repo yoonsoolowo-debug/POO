@@ -5,18 +5,11 @@ Alan Nathaniel Acosta Valderrama
 Código: 20232135005
 anacostav@udistrital.edu.co
 
-Este programa simula el movimiento de un objeto de masa m=3.2 kg
-sobre el eje x, sometido a una fuerza neta variable.
+Este programa simula el movimiento de un objeto de masa m=3.2 kg sobre el eje x, sometido a una fuerza neta variable.
+La fuerza está dada por: Fx=-62.720*x+10.464*x^3-0.544*x^5
 
-La fuerza está dada por:
-Fx=-62.720*x+10.464*x^3-0.544*x^5
-
-El programa utiliza el método de Euler y el método de Euler
-mejorado para calcular la posición, velocidad y aceleración
-de la partícula en función del tiempo.
-
-También genera archivos .dat para realizar las gráficas
-de posición, velocidad y aceleración mediante Gnuplot.
+El programa utiliza el método de Euler y el método de Euler mejorado para calcular la posición, velocidad y aceleración de la partícula en función del tiempo.
+También genera archivos .dat para realizar las gráficas de posición, velocidad y aceleración mediante Gnuplot.
 */
 
 #include<iostream>   // Entrada y salida de datos.
