@@ -69,9 +69,7 @@ int main(){
     // Incremento de tiempo.
     double h=(tf-t0)/N;
 
-    // =========================================================
     // METODO DE EULER
-    // =========================================================
 
     double te=t0;
     double xe=x0;
@@ -124,9 +122,7 @@ int main(){
     eulervelocidad.close();
     euleraceleracion.close();
 
-    // =========================================================
     // METODO DE EULER MEJORADO
-    // =========================================================
 
     double tm=t0;
     double xm=x0;
@@ -155,10 +151,10 @@ int main(){
         double vactual=vm;
         double aactual=am;
 
-        // Predictor de la velocidad.
+        // Velocidad.
         double vpred=vactual+h*aactual;
 
-        // Predictor de la posición.
+        // Posición.
         double xpred=xm+h*vactual;
 
         // Aceleración en la posición predicha.
@@ -187,10 +183,7 @@ int main(){
     mejoradovelocidad.close();
     mejoradoaceleracion.close();
 
-    // =========================================================
     // GRAFICA DE POSICION VS TIEMPO
-    // =========================================================
-
     // Se abre Gnuplot.
     FILE *gnuplot1=popen("gnuplot -persist","w");
 
@@ -207,10 +200,7 @@ int main(){
     // Se comparan Euler y Euler mejorado.
     fprintf(gnuplot1,"plot \"euler_posicion.dat\" using 1:2 with linespoints pt 6 ps 1 title \"Euler\", \"mejorado_posicion.dat\" using 1:2 with linespoints pt 6 ps 1 title \"Euler mejorado\"\n");
 
-    // =========================================================
     // GRAFICA DE VELOCIDAD VS TIEMPO
-    // =========================================================
-
     FILE *gnuplot2=popen("gnuplot -persist","w");
 
     if(gnuplot2==NULL){
@@ -226,10 +216,7 @@ int main(){
     // Se comparan Euler y Euler mejorado.
     fprintf(gnuplot2,"plot \"euler_velocidad.dat\" using 1:2 with linespoints pt 6 ps 1 title \"Euler\", \"mejorado_velocidad.dat\" using 1:2 with linespoints pt 6 ps 1 title \"Euler mejorado\"\n");
 
-    // =========================================================
     // GRAFICA DE ACELERACION VS TIEMPO
-    // =========================================================
-
     FILE *gnuplot3=popen("gnuplot -persist","w");
 
     if(gnuplot3==NULL){
